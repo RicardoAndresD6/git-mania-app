@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const AddCategory = ({ onNewCategory }) => {
 
@@ -31,7 +32,7 @@ export const AddCategory = ({ onNewCategory }) => {
     }
 
     return (
-        <form onSubmit={ onInputSubmit } className='my-10'>
+        <form onSubmit={ onInputSubmit } className='my-10' aria-label='form' >
             <div className="relative">
                 <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none bg-transparent">
                     <svg 
@@ -58,4 +59,8 @@ export const AddCategory = ({ onNewCategory }) => {
             </div>
         </form>
     )
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired,
 }
